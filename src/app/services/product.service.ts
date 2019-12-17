@@ -9,22 +9,15 @@ import { map } from "rxjs/operators";
 })
 export class ProductService {
   // URL for Spring Boot REST API
-  private baseUrl = "http://localhost:8080/api/products";
+  private _url = "http://localhost:8080/products";
 
-  // Injecting httpClient
+  // Injecting httpClient as a dependency
   constructor(private httpClient: HttpClient) {}
 
   // Map the JSON data from Spring Data REST to Product array
+  // Returns Observable of type Product array
   getProductList(): Observable<Product[]> {
-    return this.httpClient
-      .get<GetResponse>(this.baseUrl)
-      .pipe(map(response => response._embedded.products));
+    // Get request from products. Type - array of Product
+    return this.httpClient.get<Product[]>(this._url);
   }
-}
-
-// Supporting interface. Helps with the mapping. Unwrappes the JSON data from Sring Rest API
-interface GetResponse {
-  _embedded: {
-    products: Product[];
-  };
 }

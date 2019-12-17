@@ -12,16 +12,11 @@ export class ProductListComponent implements OnInit {
   products: Product[];
 
   // Injecting ProductService
-  constructor(private productService: ProductService) {}
+  constructor(private _productService: ProductService) {}
 
   ngOnInit() {
-    this.listProducts();
-  }
-
-  listProducts() {
-    // Method is invoked once you "subscribe"
-    this.productService.getProductList().subscribe(data => {
-      this.products = data; // Assign results to Product Array
-    });
+    this._productService
+      .getProductList()
+      .subscribe(data => (this.products = data)); // Get data by subscribing
   }
 }
