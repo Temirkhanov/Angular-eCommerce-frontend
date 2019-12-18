@@ -2,26 +2,37 @@
   {{ tempProduct.name }}: {{ tempProduct.unitPrice | currency: "USD" }}
 </p> -->
 
+<!-- <div class="row">
+  
+</div> -->
+
 <div class="row">
   <div
-    *ngFor="let tempProduct of products"
+    *ngFor="let category of categories"
     class="col-3"
     style="padding: 5px; margin-bottom: 1vh;"
   >
-    <img
-      src="{{ tempProduct.imageUrl }}"
-      class="img-fluid"
-      alt="Responsive image"
-      style="max-height:13vh;"
-    />
-    <h6 class="" style="font-size: 17px; font-weight: 400;">
-      {{ tempProduct.name }} <br />
-      <small class="text-muted">
-        {{ tempProduct.unitPrice | currency: "USD" }} <br />
-      </small>
-      <small class="text-muted font-italic">
-        {{ tempProduct.unitsInStock }} left in stock
-      </small>
-    </h6>
+    <h1>{{ category.categoryName }}</h1>
+    <div
+      *ngFor="let tempProduct of category.products"
+      class="col-3"
+      style="padding: 5px; margin-bottom: 1vh;"
+    >
+      <img
+        src="{{ tempProduct.imageUrl }}"
+        class="img-fluid"
+        alt="Responsive image"
+        style="max-height:13vh;"
+      />
+      <h6 class="" style="font-size: 17px; font-weight: 400;">
+        {{ tempProduct.name }} <br />
+        <small class="text-muted">
+          {{ tempProduct.unitPrice | currency: "USD" }} <br />
+        </small>
+        <small class="text-muted font-italic">
+          {{ tempProduct.unitsInStock }} left in stock
+        </small>
+      </h6>
+    </div>
   </div>
 </div>
