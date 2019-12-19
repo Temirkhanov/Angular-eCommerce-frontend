@@ -20,4 +20,8 @@ export class ProductService {
     // Get request from products. Type - array of Product
     return this.httpClient.get<Product[]>(this._url);
   }
+  getProduct(id): Observable<Product> {
+    // Get request from products. Type - array of Product
+    return this.httpClient.get<Product>(this._url + "/" + id);
+  }
 }

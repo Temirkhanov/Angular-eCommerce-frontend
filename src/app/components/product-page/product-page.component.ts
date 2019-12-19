@@ -16,5 +16,10 @@ export class ProductPageComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let id = parseInt(this.route.snapshot.paramMap.get("id"));
+    this._productService
+      .getProduct(id)
+      .subscribe(data => (this.product = data)); // Get data by subscribing
+  }
 }
