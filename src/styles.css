@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.navbar {
+  border-bottom: 1px solid lightgray;
+  font-size: 15px;
+  font-weight: 500;
+}
+.main {
+  margin-top: 40px;
+}

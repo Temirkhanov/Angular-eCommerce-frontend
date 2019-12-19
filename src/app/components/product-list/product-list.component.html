@@ -1,38 +1,40 @@
-<!-- <p *ngFor="let tempProduct of products">
-  {{ tempProduct.name }}: {{ tempProduct.unitPrice | currency: "USD" }}
-</p> -->
-
-<!-- <div class="row">
-  
-</div> -->
-
-<div class="row">
+<div class="row no-gutters pt-5">
   <div
-    *ngFor="let category of categories"
-    class="col-3"
-    style="padding: 5px; margin-bottom: 1vh;"
+    class="col-12 col-sm-6 col-md-6 col-lg-3"
+    *ngFor="let product of products"
   >
-    <h1>{{ category.categoryName }}</h1>
-    <div
-      *ngFor="let tempProduct of category.products"
-      class="col-3"
-      style="padding: 5px; margin-bottom: 1vh;"
-    >
+    <div class="border rounded-0 clean-product-item">
       <img
-        src="{{ tempProduct.imageUrl }}"
-        class="img-fluid"
-        alt="Responsive image"
-        style="max-height:13vh;"
+        class="img-fluid d-block mx-auto img-thumbnail"
+        src="../../../assets/img/tech/image1.jpg"
+        style="margin-bottom: 20px; max-height: 200px"
       />
-      <h6 class="" style="font-size: 17px; font-weight: 400;">
-        {{ tempProduct.name }} <br />
-        <small class="text-muted">
-          {{ tempProduct.unitPrice | currency: "USD" }} <br />
-        </small>
-        <small class="text-muted font-italic">
-          {{ tempProduct.unitsInStock }} left in stock
-        </small>
+      <h6
+        class="display-4 text-center text-dark"
+        style="margin-bottom: 20px;font-weight: 600;font-size: 16px;color: rgb(50, 48, 60);"
+      >
+        {{ product.name }}
       </h6>
+      <div class="about">
+        <div class="btn-group">
+          <button class="btn btn-outline-dark btn-sm  px-3" type="button">
+            <i class="fas fa-cart-plus"></i></button
+          ><button
+            class="btn btn-outline-dark btn-sm px-3"
+            type="button"
+            data-toggle="modal"
+            attr.data-target="#modal{{ product.id }}"
+          >
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+
+        <div class="price">
+          <h6>
+            {{ product.unitPrice | currency: "USD" }}
+          </h6>
+        </div>
+      </div>
     </div>
   </div>
 </div>
