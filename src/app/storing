@@ -1,5 +1,5 @@
 <nav
-  class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar p-1"
+  class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar"
 >
   <div class="container">
     <a class="navbar-brand logo" href="#">eCommerce</a
@@ -8,11 +8,15 @@
       class="navbar-toggler"
       data-target="#navcol-1"
     >
-      <a routerLink="/"><span class="sr-only">Toggle navigation</span> </a>
-      <span class="navbar-toggler-icon"></span>
+      <span class="sr-only">Toggle navigation</span
+      ><span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navcol-1">
       <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item item" role="presentation">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">HOME</a>
+        </li>
+
         <li class="nav-item item" role="presentation">
           <a class="nav-link" routerLink="/catalog" routerLinkActive="active"
             >SHOP</a
