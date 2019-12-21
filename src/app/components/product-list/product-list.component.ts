@@ -6,7 +6,6 @@ import { Router } from "@angular/router";
 @Component({
   selector: "app-product-list",
   templateUrl: "./product-list.component.html",
-  // templateUrl: "./product-list.component.html",
   styleUrls: ["./product-list.component.css"]
 })
 export class ProductListComponent implements OnInit {
@@ -26,5 +25,9 @@ export class ProductListComponent implements OnInit {
 
   onSelect(product) {
     this.router.navigate(["/product", product.id]);
+  }
+
+  onAddToCart(id) {
+    this._productService.onAddToCart(id);
   }
 }
