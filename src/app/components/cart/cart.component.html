@@ -1,8 +1,12 @@
 <div class="row no-gutters clean-block clean-cart dark mt-5 p-5">
+  <!-- Item -->
   <div class="col-md-12 col-lg-8">
     <div class="items">
       <div class="product pb-2 border-bottom">
-        <div class="row justify-content-center align-items-center">
+        <div
+          class="row justify-content-center align-items-center"
+          *ngFor="let product of cartProducts.keys()"
+        >
           <div class="col-md-3">
             <div class="product-image">
               <img
@@ -12,7 +16,7 @@
             </div>
           </div>
           <div class="col-md-5 product-info">
-            <a class="product-name" href="#">Lorem Ipsum dolor</a>
+            <a class="product-name" href="#">{{ product.name }}</a>
           </div>
           <div class="col-6 col-md-2 quantity">
             <label class="d-none d-md-block" for="quantity">Quantity</label
@@ -20,16 +24,20 @@
               type="number"
               class="form-control-sm form-control quantity-input"
               id="number"
-              value="1"
+              value="{{ cartProducts.get(product) }}"
             />
           </div>
           <div class="col-6 col-md-2 price">
-            <span style="font-size: 20px;font-weight: 600;">$120</span>
+            <span style="font-size: 20px;font-weight: 500;">{{
+              product.unitPrice | currency: "USD"
+            }}</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Summary -->
   <div class="col-md-12 col-lg-4">
     <div class="summary">
       <h3>Summary</h3>

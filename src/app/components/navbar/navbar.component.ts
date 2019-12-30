@@ -7,7 +7,7 @@ import { ProductService } from "src/app/services/product.service";
   styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(public productService: ProductService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {}
 }

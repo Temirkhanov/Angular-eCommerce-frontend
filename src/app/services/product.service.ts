@@ -9,7 +9,7 @@ import { AppComponent } from "../app.component";
   providedIn: "root"
 })
 export class ProductService {
-  cartProducts: Array<Product> = [];
+  cartProducts: Map<Product, number> = new Map();
   navbarCartCount: number = 0;
   // URL for Spring Boot REST API
   private _url = "http://localhost:8080/products";
@@ -28,7 +28,14 @@ export class ProductService {
     return this.httpClient.get<Product>(this._url + "/" + id);
   }
   onAddToCart(item: Product) {
-    this.cartProducts.push(item);
+    if (this.cartProducts.has(item)) {
+      this.cartProducts.set(item, this.cartProducts.get(item) + 1);
+    } else {
+      this.cartProducts.set(item, 1);
+    }
     this.navbarCartCount++;
+  }
+  getCart() {
+    return this.cartProducts;
   }
 }
