@@ -3,12 +3,14 @@ import { HttpClient } from "@angular/common/http";
 import { Product } from "../common/product";
 import { Observable } from "rxjs";
 import { Order } from "src/app/common/order";
+import { AppComponent } from "../app.component";
 
 @Injectable({
   providedIn: "root"
 })
 export class ProductService {
   productOrders: Map<number, number> = new Map();
+  totalQty: number = 0;
   // URL for Spring Boot REST API
   private _url = "http://localhost:8080/products";
 
@@ -34,5 +36,10 @@ export class ProductService {
     this.productOrders.forEach((value: number, key: number) => {
       console.log(key, value);
     });
+    this.totalQty++;
+  }
+
+  getTotalQty() {
+    return this.totalQty;
   }
 }

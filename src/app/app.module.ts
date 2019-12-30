@@ -7,9 +7,10 @@ import { ProductService } from "./services/product.service";
 import { ProductPageComponent } from "./components/product-page/product-page.component";
 import { AppRoutingModule, routingComponents } from "./app-routing.module";
 import { HomePageComponent } from "./components/home-page/home-page.component";
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, NavbarComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [ProductService],
   bootstrap: [AppComponent]
