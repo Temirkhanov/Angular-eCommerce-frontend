@@ -1,0 +1,18 @@
+<div class="summary">
+  <h3>Summary</h3>
+  <h4>
+    <span class="text">Subtotal</span
+    ><span class="price">{{ subtotal | currency: "USD" }}</span>
+  </h4>
+  <h4>
+    <span class="text">Shipping</span
+    ><span class="price">{{ shipping | currency: "USD" }}</span>
+  </h4>
+  <h4>
+    <span class="text">Total</span
+    ><span class="price">{{ total | currency: "USD" }}</span>
+  </h4>
+  <button class="btn btn-dark btn-block" type="button">
+    Checkout
+  </button>
+</div>

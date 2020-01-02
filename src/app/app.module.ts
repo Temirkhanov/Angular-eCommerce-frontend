@@ -8,9 +8,10 @@ import { ProductPageComponent } from "./components/product-page/product-page.com
 import { AppRoutingModule, routingComponents } from "./app-routing.module";
 import { HomePageComponent } from "./components/home-page/home-page.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CartCalComponent } from './components/cart-cal/cart-cal.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents, NavbarComponent],
+  declarations: [AppComponent, routingComponents, NavbarComponent, CartCalComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [ProductService],
   bootstrap: [AppComponent]

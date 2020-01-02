@@ -11,6 +11,7 @@ import { AppComponent } from "../app.component";
 export class ProductService {
   cartProducts: Map<Product, number> = new Map();
   navbarCartCount: number = 0;
+
   // URL for Spring Boot REST API
   private _url = "http://localhost:8080/products";
 
