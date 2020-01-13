@@ -15,9 +15,11 @@ import { ProfileComponent } from './components/user/profile/profile.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { UserListComponent } from './components/admin/user-list/user-list.component';
 import { ProductListComponent } from './components/admin/product-list/product-list.component';
+import { NotFoundComponent } from './components/error/not-found/not-found.component';
+import { UnathorizedComponent } from './components/error/unathorized/unathorized.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents, NavbarComponent, CartCalComponent, LoginComponent, RegisterComponent, ProfileComponent, DashboardComponent, UserListComponent, ProductListComponent],
+  declarations: [AppComponent, routingComponents, NavbarComponent, CartCalComponent, LoginComponent, RegisterComponent, ProfileComponent, DashboardComponent, UserListComponent, ProductListComponent, NotFoundComponent, UnathorizedComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [ProductService],
   bootstrap: [AppComponent]
