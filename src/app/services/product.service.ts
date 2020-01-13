@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Product } from "../common/product";
 import { Observable } from "rxjs";
-import { Order } from "src/app/common/order";
 import { AppComponent } from "../app.component";
 
 @Injectable({
