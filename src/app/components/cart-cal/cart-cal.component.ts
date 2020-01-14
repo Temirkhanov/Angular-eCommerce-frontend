@@ -6,7 +6,7 @@ import {
   SimpleChange,
   SimpleChanges
 } from "@angular/core";
-import { Product } from "src/app/common/product";
+import { Product } from "../../model/product";
 
 @Component({
   selector: "app-cart-cal",
@@ -26,7 +26,7 @@ export class CartCalComponent implements OnInit {
     const products: Map<Product, number> = dataChanges.currentValue;
     this.subtotal = 0;
     products.forEach((qty: number, prod: Product) => {
-      this.subtotal += prod.unitPrice * qty;
+      this.subtotal += prod.price * qty;
     });
     this.total = this.subtotal + this.shipping;
   }

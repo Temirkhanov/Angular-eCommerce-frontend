@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { ProductService } from "src/app/services/product.service";
-import { Product } from "src/app/common/product";
+import { UserService } from "../../services/user.service";
+import { Product } from "../../model/product";
 
 @Component({
   selector: "app-product-page",
@@ -12,14 +12,14 @@ export class ProductPageComponent implements OnInit {
   product: Product;
 
   constructor(
-    private _productService: ProductService,
+    private userService: UserService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    let id = parseInt(this.route.snapshot.paramMap.get("id"));
-    this._productService
-      .getProduct(id)
-      .subscribe(data => (this.product = data)); // Get data by subscribing
+    // let id = parseInt(this.route.snapshot.paramMap.get("id"));
+    // this.userService
+    //   .getProduct(id)
+    //   .subscribe(data => (this.product = data)); // Get data by subscribing
   }
 }

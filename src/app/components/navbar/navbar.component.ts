@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ProductService } from "src/app/services/product.service";
 
 @Component({
   selector: "app-navbar",
@@ -7,7 +6,7 @@ import { ProductService } from "src/app/services/product.service";
   styleUrls: ["./navbar.component.css"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(private productService: ProductService) {}
+  constructor() {}
 
   ngOnInit() {}
 }

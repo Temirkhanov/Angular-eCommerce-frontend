@@ -1,0 +1,7 @@
+.go-back-btn {
+  font-size: 14px;
+  border: 1px solid;
+  padding: 6px 8px; /*background: linear-gradient(135deg, #a61322, #d33f34);*/
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+}
