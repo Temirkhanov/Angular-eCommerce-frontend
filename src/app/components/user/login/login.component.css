@@ -1,0 +1,10 @@
+form {
+  padding: 40px 60px;
+  margin: auto;
+  margin-top: 20%;
+  max-width: 500px;
+}
+
+.text-danger {
+  font-size: 16px;
+}

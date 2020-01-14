@@ -17,6 +17,7 @@ import { NotFoundComponent } from "./components/error/not-found/not-found.compon
 import { UnathorizedComponent } from "./components/error/unathorized/unathorized.component";
 import { TransactionListComponent } from "./components/admin/transaction-list/transaction-list.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,13 @@ import { ProductListComponent } from "./components/product-list/product-list.com
     HomePageComponent,
     ProductListComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
