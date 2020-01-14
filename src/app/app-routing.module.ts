@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { Router, Routes, RouterModule } from "@angular/router";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { CartComponent } from "./components/cart/cart.component";
 import { HomePageComponent } from "./components/home-page/home-page.component";
@@ -13,13 +13,19 @@ import { ProductListAdminComponent } from "./components/admin/product-list-admin
 import { UnathorizedComponent } from "./components/error/unathorized/unathorized.component";
 import { NotFoundComponent } from "./components/error/not-found/not-found.component";
 import { AuthGuard } from "./guards/auth.guard";
+import { Role } from "./model/role";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: HomePageComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard] },
+  {
+    path: "profile",
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN, Role.USER] }
+  },
   { path: "catalog", component: ProductListComponent },
   { path: "product/:id", component: ProductPageComponent },
   { path: "shopping-cart", component: CartComponent },
@@ -27,15 +33,20 @@ const routes: Routes = [
   //admin panel
   {
     path: "dashboard",
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] }
   },
   {
     path: "user-list",
-    component: UserListComponent
+    component: UserListComponent,
+    data: { roles: [Role.ADMIN] }
   },
   {
     path: "product-list",
-    component: ProductListAdminComponent
+    component: ProductListAdminComponent,
+    canActivate: [AuthGuard],
+    data: { roles: [Role.ADMIN] }
   },
 
   //error pages
@@ -47,7 +58,13 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+  constructor(private router: Router) {
+    this.router.errorHandler = (error: any) => {
+      this.router.navigate(["/404"]);
+    };
+  }
+}
 export const routingComponents = [
   ProductListComponent,
   CartComponent,
