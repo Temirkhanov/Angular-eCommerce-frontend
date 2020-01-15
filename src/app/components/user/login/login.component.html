@@ -52,21 +52,14 @@
         Invalid password.
       </div>
     </div>
-    <div class="row mt-4">
-      <div class="col">
-        <button class="btn btn-outline-dark btn-block" type="submit">
-          Log In
-        </button>
-      </div>
-      <div class="col">
-        <button
-          [routerLink]="['/register']"
-          class="btn btn-outline-primary btn-block"
-          type="submit"
-        >
-          Register
-        </button>
-      </div>
-    </div>
+    <button class="btn btn-outline-dark mt-4 px-5 d-block" type="submit">
+      Log In
+    </button>
+    <span class="d-block pt-3 login-text text-secondary"
+      >New user?
+      <a [routerLink]="['/register']" class="btn btn-link pt-1 pl-0"
+        >Sign up.</a
+      ></span
+    >
   </form>
 </div>
