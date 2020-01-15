@@ -28,6 +28,7 @@ export class UserService {
     return this.currentUserSubject.value;
   }
 
+  // ======== LOGIN ========
   // Sends GET request to server side.
   login(user: User): Observable<any> {
     // Login auth will be provided with HttpHeader
@@ -39,7 +40,6 @@ export class UserService {
           }
         : {}
     );
-
     return (
       this.http
         // GET - "/api/user/login"
@@ -57,6 +57,7 @@ export class UserService {
     );
   }
 
+  // ======== LOGOUT ========
   // POST - "/api/user/logout"
   logOut(): Observable<any> {
     return this.http.post(API_URL + "logout", {}).pipe(
@@ -68,6 +69,7 @@ export class UserService {
     );
   }
 
+  // ======== REGISTER ========
   // POST - "/api/user/registration"
   // Send data in JSON format
   register(user: User): Observable<any> {
@@ -76,6 +78,7 @@ export class UserService {
     });
   }
 
+  // ======== PRODUCTS ========
   // GET - "/api/user/products"
   findAllProducts(): Observable<any> {
     return this.http.get(API_URL + "products", {
@@ -83,6 +86,7 @@ export class UserService {
     });
   }
 
+  // ======== PURCHASE ========
   // POST - "/api/user/purchase"
   // Send data in JSON format
   purchaseProduct(transaction: Transaction): Observable<any> {
