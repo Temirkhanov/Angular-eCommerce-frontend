@@ -1,3 +1,92 @@
-.container {
-  padding-top: 80px;
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body::after,
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+body::before {
+  z-index: -2;
+  background: url("https://source.unsplash.com/category/nature/800x400");
+  background-size: cover;
+}
+body::after {
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.card {
+  position: relative;
+  max-width: 20rem;
+  border: none;
+}
+.card .card-block {
+  position: relative;
+  padding: 2rem;
+}
+.card .card-text {
+  margin-bottom: 0;
+}
+.card .btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 50%;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  transition: all 0.25s ease-in-out;
+}
+.card .btn .icon {
+  width: 50%;
+  height: 50%;
+  margin-left: -10%;
+  transition: all 0.25s ease-in-out;
+}
+
+.display-4 {
+  font-size: 20px;
+}
+
+h6 {
+  font-weight: 500;
+  font-size: 16px;
+  color: rgba(53, 53, 53, 0.85);
+}
+
+img {
+  height: 15rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* btn-5 */
+.btn-5 {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-5:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
 }

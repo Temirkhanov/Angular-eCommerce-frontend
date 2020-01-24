@@ -13,7 +13,6 @@ import { Observable } from "rxjs";
 })
 export class ProductListComponent implements OnInit {
   productList: Array<Product>;
-  obs: Observable<any>;
   errorMessage: string;
   infoMessage: string;
   currentUser: User;
@@ -31,6 +30,7 @@ export class ProductListComponent implements OnInit {
     this.userService
       .findAllProducts()
       .subscribe(data => (this.productList = data));
+    console.log(this.productList + "---");
     //   .getProductList()
     //   .subscribe(data => (this.products = data)); // Get data by subscribing
   }

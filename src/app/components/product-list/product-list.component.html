@@ -1,125 +1,23 @@
-<div class="container">
+<div class="container mt-4 pt-4">
   <div
-    class="shadow-none content"
+    class="shadow-none content mt-5"
     style="background-color: rgba(255,255,255,0);"
   >
-    <div class="row no-gutters">
-      <div class="col-12 col-sm-6 col-md-6 col-lg-4" style="padding: 15px;">
-        <div class="bg-white border rounded shadow clean-product-item">
-          <img
-            class="img-fluid d-block mx-auto"
-            src="https://img1.cgtrader.com/items/816570/7736d7f44c/male-hoodie-3d-model-obj-mtl-ma-mb-blend-zpac-avt-pos-ZPrj.png"
-            style="margin-bottom: 20px;"
-          /><a
-            class="text-uppercase text-center text-dark d-block add-to-cart"
-            data-toggle="modal"
-            data-target="#modal-1"
-            href="#"
-            style="font-weight: 600;font-size: 15px;margin-bottom: 15px;/*&amp;: hover{color:#fff!important}background:gray;*/"
-            >Name of the product</a
-          >
-          <div class="about">
-            <button
-              class="btn btn-outline-dark btn-block btn-sm text-uppercase"
-              type="button"
-              style="font-size: 12PX;border: 1px solid;border-radius: 20px;padding: 6px 8px;/*background: linear-gradient(135deg, #a61322, #d33f34);*/font-weight: 600;font-family: Montserrat, sans-serif;width: 60%;"
-            >
-              ADD TO CART
-            </button>
-            <div class="price" style="width: 30%;">
-              <h3 style="font-size: 18px;">$100</h3>
-            </div>
+    <div class="row mt-5">
+      <div
+        class="col-12 col-md-6 col-lg-4 p-2"
+        *ngFor="let product of productList"
+      >
+        <div class="card shadow">
+          <div class="card-img-top">
+            <img class="img-fluid" src="{{ product.image }}" />
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="row" style="margin: 0;">
-      <div class="col" style="padding-top: 15px;">
-        <div class="products">
-          <nav>
-            <ul class="pagination">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous"
-                  ><span aria-hidden="true">«</span></a
-                >
-              </li>
-              <li class="page-item active page-item-dark">
-                <a class="page-link" href="#">1</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next"
-                  ><span aria-hidden="true">»</span></a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- =========================== -->
-  <!-- ========= Modal ========= -->
-  <div class="modal fade products" role="dialog" tabindex="-1" id="modal-1">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header pb-2" style="border: none;">
-          <h3 class="pb-0  display-4" style="font-size:30px">
-            Premium Panda Hoodie
-          </h3>
-          <button
-            type="button"
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-          >
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body" style="padding: 0;">
-          <div class="row" style="margin: 0; padding: 0; ">
-            <!-- Image -->
-            <div class="col-12" style="margin: 0; padding: 0; ">
-              <img
-                src="https://img1.cgtrader.com/items/816570/7736d7f44c/male-hoodie-3d-model-obj-mtl-ma-mb-blend-zpac-avt-pos-ZPrj.png"
-                style="max-width: 100%;"
-              />
-            </div>
-            <!-- Info -->
-            <div class="col-12">
-              <div class="info">
-                <div
-                  class="d-flex align-items-center"
-                  style="padding: 5px 0px;border-bottom: 1px solid lightgray;"
-                >
-                  <h5 class="m-0 mr-4">
-                    $300.00
-                  </h5>
-                  <button
-                    class="btn btn-outline-dark btn-sm text-uppercase"
-                    type="button"
-                    style="font-size: 12PX;border: 1px solid;border-radius: 20px;padding: 6px 8px;/*background: linear-gradient(135deg, #a61322, #d33f34);*/font-weight: 600;font-family: Montserrat, sans-serif;width: 40%;"
-                  >
-                    ADD TO CART
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="summary">
-                <p style="padding-top: 20px;font-size: 15px;">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  augue nunc, pretium at augue at, convallis pellentesque ipsum.
-                  Vestibulum diam risus, sagittis at fringilla at, pulvinar vel
-                  risus. Vestibulum dignissim eu nulla eu imperdiet. Morbi
-                  mollis tellus a nunc vestibulum consequat. Quisque tristique
-                  elit et nibh dapibus sodales. Nam sollicitudin a urna sed
-                  iaculis.
-                </p>
-              </div>
-            </div>
+          <div class="card-block">
+            <h4 class="card-title display-4">{{ product.name }}</h4>
+            <h6 class="card-subtitle">${{ product.price }}</h6>
+            <a class="btn btn-dark btn-5" href="#">
+              <i class="icon" class="fas fa-cart-plus"></i>
+            </a>
           </div>
         </div>
       </div>
