@@ -8,17 +8,16 @@
     <div class="col-md-6">
       <h3 class="mt-4">
         {{ product.name }}
-        <span class="stock-num">{{ product.unitsInStock }} in stock</span>
       </h3>
 
-      <h5 class="price-tag ">${{ product.unitPrice }}</h5>
+      <h5 class="price-tag ">${{ product.price }}</h5>
       <div class="info">
         <button class="btn btn-outline-dark" type="button">
           <i class="fas fa-cart-plus"></i>Add to Cart
         </button>
         <div class="summary">
           <p>
-            {{ product.description }}
+            {{ product.explanation }}
           </p>
         </div>
       </div>
