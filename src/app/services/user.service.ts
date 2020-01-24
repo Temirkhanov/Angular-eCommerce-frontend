@@ -18,11 +18,23 @@ export class UserService {
   // BeahaviorSubject User ->  will be used to subscribe current user
   private currentUserSubject: BehaviorSubject<User>;
 
+  // Cart
+  // private cart: Product[];
+  cartCount: number;
+
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(
       JSON.parse(localStorage.getItem("currentUser"))
     );
     this.currentUser = this.currentUserSubject.asObservable();
+
+    // Cart
+    let cart = this.getCart();
+    if (cart.length == 0) {
+      this.cartCount = 0;
+    } else {
+      this.cartCount = cart.length;
+    }
   }
 
   public get currentUserValue(): User {
@@ -94,5 +106,28 @@ export class UserService {
     return this.http.post(API_URL + "purchase", JSON.stringify(transaction), {
       headers: { "Content-Type": "application/json; charset=UTF-8" }
     });
+  }
+
+  // ======== SHOPPING CART ========
+  public onAddToCart(item: Product) {
+    let cart = this.getCart();
+    cart.push(item);
+    this.setLocalStorageCart(cart);
+    this.cartCount++;
+  }
+
+  public getCart(): Product[] {
+    let localStorageItem = JSON.parse(localStorage.getItem("cart"));
+    return localStorageItem == null ? [] : localStorageItem.cart;
+  }
+
+  public removeItem(id: number): void {
+    let cart = this.getCart();
+    cart = cart.filter(item => item.id != id);
+    this.setLocalStorageCart(cart);
+  }
+
+  private setLocalStorageCart(cart: Product[]): void {
+    localStorage.setItem("cart", JSON.stringify({ cart: cart }));
   }
 }

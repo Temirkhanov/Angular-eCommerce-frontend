@@ -59,6 +59,6 @@ export class ProductListComponent implements OnInit {
   }
 
   onAddToCart(id) {
-    // this._productService.onAddToCart(id);
+    this.userService.onAddToCart(id);
   }
 }

@@ -15,9 +15,9 @@
           <div class="card-block">
             <h4 class="card-title display-4">{{ product.name }}</h4>
             <h6 class="card-subtitle">${{ product.price }}</h6>
-            <a class="btn btn-dark btn-5" href="#">
+            <button class="btn btn-dark btn-5" (click)="onAddToCart(product)">
               <i class="icon" class="fas fa-cart-plus"></i>
-            </a>
+            </button>
           </div>
         </div>
       </div>
