@@ -4,7 +4,6 @@ import { AppComponent } from "./app.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ProductPageComponent } from "./components/product-page/product-page.component";
 import { AppRoutingModule, routingComponents } from "./app-routing.module";
-import { HomePageComponent } from "./components/home-page/home-page.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { CartCalComponent } from "./components/cart-cal/cart-cal.component";
 import { LoginComponent } from "./components/user/login/login.component";
@@ -35,7 +34,6 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     UnathorizedComponent,
     TransactionListComponent,
     ProductPageComponent,
-    HomePageComponent,
     ProductListComponent
   ],
   imports: [

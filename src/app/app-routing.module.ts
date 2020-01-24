@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { Router, Routes, RouterModule } from "@angular/router";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { CartComponent } from "./components/cart/cart.component";
-import { HomePageComponent } from "./components/home-page/home-page.component";
 import { ProductPageComponent } from "./components/product-page/product-page.component";
 import { LoginComponent } from "./components/user/login/login.component";
 import { RegisterComponent } from "./components/user/register/register.component";
@@ -17,7 +16,7 @@ import { Role } from "./model/role";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "home", component: HomePageComponent },
+  { path: "home", component: ProductListComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   {
@@ -26,7 +25,6 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: [Role.ADMIN, Role.USER] }
   },
-  { path: "catalog", component: ProductListComponent },
   { path: "product/:id", component: ProductPageComponent },
   { path: "shopping-cart", component: CartComponent },
 
@@ -68,6 +66,5 @@ export class AppRoutingModule {
 export const routingComponents = [
   ProductListComponent,
   CartComponent,
-  ProductPageComponent,
-  HomePageComponent
+  ProductPageComponent
 ];
