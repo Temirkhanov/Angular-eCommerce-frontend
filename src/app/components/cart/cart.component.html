@@ -5,32 +5,41 @@
       <div class="product pb-2 border-bottom">
         <div
           class="row justify-content-center align-items-center"
-          *ngFor="let product of cartProducts.keys()"
+          *ngFor="let product of cartProducts"
         >
           <div class="col-md-3">
             <div class="product-image">
               <img
                 class="img-fluid d-block mx-auto image"
-                src="../../../assets/img/tech/image2.jpg"
+                src="{{ product.image }}"
               />
             </div>
           </div>
           <div class="col-md-5 product-info">
             <a class="product-name" href="#">{{ product.name }}</a>
           </div>
-          <div class="col-6 col-md-2 quantity">
+          <!-- <div class="col-6 col-md-2 quantity">
             <label class="d-none d-md-block" for="quantity">Quantity</label
             ><input
               type="number"
               class="form-control-sm form-control quantity-input"
               id="number"
-              value="{{ cartProducts.get(product) }}"
+              value=""
             />
+          </div> -->
+          <div class="col-6 col-md-2 price">
+            <span style="font-size: 18px;font-weight: 400;">{{
+              product.price | currency: "USD"
+            }}</span>
           </div>
           <div class="col-6 col-md-2 price">
-            <span style="font-size: 20px;font-weight: 500;">{{
-              product.unitPrice | currency: "USD"
-            }}</span>
+            <a
+              class="text-dark"
+              href="/shopping-cart"
+              (click)="removeFromCart(product)"
+            >
+              <i class="fas fa-trash-alt"></i>
+            </a>
           </div>
         </div>
       </div>

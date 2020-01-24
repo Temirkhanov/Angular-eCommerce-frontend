@@ -8,10 +8,15 @@ import { UserService } from "../../services/user.service";
   styleUrls: ["./cart.component.css"]
 })
 export class CartComponent implements OnInit {
-  cartProducts: Map<Product, number>;
+  cartProducts: Product[];
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    // this.cartProducts = this.userService.getCart();
+    this.cartProducts = this.userService.getCart();
+  }
+
+  removeFromCart(item: Product) {
+    console.log("Removing " + item.name);
+    this.userService.removeItem(item);
   }
 }

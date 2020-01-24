@@ -14,7 +14,7 @@ import { Product } from "../../model/product";
   styleUrls: ["./cart-cal.component.css"]
 })
 export class CartCalComponent implements OnInit {
-  @Input() products: Map<Product, number>;
+  @Input() products: Product[];
   subtotal = 0;
   shipping = 5;
   total = 0;
@@ -23,10 +23,10 @@ export class CartCalComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     const dataChanges: SimpleChange = changes.products;
-    const products: Map<Product, number> = dataChanges.currentValue;
+    const products: Product[] = dataChanges.currentValue;
     this.subtotal = 0;
-    products.forEach((qty: number, prod: Product) => {
-      this.subtotal += prod.price * qty;
+    products.forEach(product => {
+      this.subtotal += product.price;
     });
     this.total = this.subtotal + this.shipping;
   }

@@ -121,9 +121,16 @@ export class UserService {
     return localStorageItem == null ? [] : localStorageItem.cart;
   }
 
-  public removeItem(id: number): void {
+  // public removeItem(id: number): void {
+  //   let cart = this.getCart();
+  //   cart = cart.filter(item => item.id != id);
+  //   this.setLocalStorageCart(cart);
+  // }
+
+  public removeItem(product: Product): void {
     let cart = this.getCart();
-    cart = cart.filter(item => item.id != id);
+    const index = cart.indexOf(product);
+    cart.splice(index, 1);
     this.setLocalStorageCart(cart);
   }
 
