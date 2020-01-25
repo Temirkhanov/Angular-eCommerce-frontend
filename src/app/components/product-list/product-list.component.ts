@@ -55,10 +55,10 @@ export class ProductListComponent implements OnInit {
 
   detail(product: Product) {
     localStorage.setItem("currentProduct", JSON.stringify(product));
-    this.router.navigate(["/detail", product.id]);
+    this.router.navigate(["/product", product.id]);
   }
 
-  onAddToCart(id) {
-    this.userService.onAddToCart(id);
+  onAddToCart(product) {
+    this.userService.onAddToCart(product);
   }
 }

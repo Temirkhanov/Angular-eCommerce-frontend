@@ -10,7 +10,13 @@
       >
         <div class="card shadow">
           <div class="card-img-top">
-            <img class="img-fluid" src="{{ product.image }}" />
+            <a
+              class=""
+              (click)="detail(product)"
+              href="product/{{ product.id }}"
+            >
+              <img class="img-fluid" src="{{ product.image }}" />
+            </a>
           </div>
           <div class="card-block">
             <h4 class="card-title display-4">{{ product.name }}</h4>

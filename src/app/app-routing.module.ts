@@ -25,6 +25,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: [Role.ADMIN, Role.USER] }
   },
+  { path: "product", component: ProductPageComponent },
   { path: "product/:id", component: ProductPageComponent },
   { path: "shopping-cart", component: CartComponent },
 
