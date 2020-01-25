@@ -16,7 +16,12 @@
             </div>
           </div>
           <div class="col-md-5 product-info">
-            <a class="product-name" href="#">{{ product.name }}</a>
+            <a
+              class="product-name"
+              (click)="detail(product)"
+              href="product/{{ product.id }}"
+              >{{ product.name }}</a
+            >
           </div>
           <!-- <div class="col-6 col-md-2 quantity">
             <label class="d-none d-md-block" for="quantity">Quantity</label
