@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../model/product";
 import { UserService } from "../../services/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-cart",
@@ -9,7 +10,7 @@ import { UserService } from "../../services/user.service";
 })
 export class CartComponent implements OnInit {
   cartProducts: Product[];
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     this.cartProducts = this.userService.getCart();
@@ -18,5 +19,10 @@ export class CartComponent implements OnInit {
   removeFromCart(item: Product) {
     console.log("Removing " + item.name);
     this.userService.removeItem(item);
+  }
+
+  detail(product: Product) {
+    localStorage.setItem("currentProduct", JSON.stringify(product));
+    this.router.navigate(["/product", product.id]);
   }
 }
