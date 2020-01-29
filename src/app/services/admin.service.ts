@@ -30,4 +30,12 @@ export class AdminService {
   numberOfUsers(): Observable<any> {
     return this.http.get(API_URL + "user-number", { headers: this.headers });
   }
+
+  findAllProducts(): Observable<any> {
+    return this.http.get(API_URL + "product-all", { headers: this.headers });
+  }
+
+  numberOfProducts(): Observable<any> {
+    return this.http.get(API_URL + "product-number", { headers: this.headers });
+  }
 }
