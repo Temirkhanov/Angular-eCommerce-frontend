@@ -38,4 +38,17 @@ export class AdminService {
   numberOfProducts(): Observable<any> {
     return this.http.get(API_URL + "product-number", { headers: this.headers });
   }
+
+  // Transactions
+  findAllTransactions(): Observable<any> {
+    return this.http.get(API_URL + "transaction-all", {
+      headers: this.headers
+    });
+  }
+
+  numberOfTransactions(): Observable<any> {
+    return this.http.get(API_URL + "transaction-number", {
+      headers: this.headers
+    });
+  }
 }
