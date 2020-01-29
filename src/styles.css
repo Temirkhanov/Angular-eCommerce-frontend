@@ -7,8 +7,3 @@
 .main {
   margin-top: 40px;
 }
-
-.product-name:hover {
-  color: rgb(red, rgb(12, 78, 165), blue);
-  transition: all 0.2s, ease-out;
-}

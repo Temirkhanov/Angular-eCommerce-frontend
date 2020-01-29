@@ -90,3 +90,18 @@ img {
   outline-offset: 15px;
   text-shadow: 1px 1px 2px #427388;
 }
+
+a.product-name {
+  text-decoration: none;
+  color: rgb(27, 26, 26);
+}
+
+a.product-name:hover {
+  color: rgb(74, 135, 206);
+  transition: all 0.2s, ease-out;
+}
+
+.product-image:hover {
+  opacity: 0.8;
+  transition: all 0.2s ease-in-out;
+}

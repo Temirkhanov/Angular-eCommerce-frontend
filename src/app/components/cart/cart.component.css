@@ -8,3 +8,12 @@ i.fa-trash-alt:hover {
   color: rgb(241, 63, 63);
   transition: all 0.3s ease-out;
 }
+
+a.product-name {
+  text-decoration: none;
+  color: rgb(27, 26, 26);
+}
+a.product-name:hover {
+  color: rgb(74, 135, 206);
+  transition: all 0.2s, ease-out;
+}
