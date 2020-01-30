@@ -47,6 +47,24 @@ export class AdminService {
 
   // Products
 
+  createProduct(product: Product): Observable<any> {
+    return this.http.post(API_URL + "product-create", JSON.stringify(product), {
+      headers: this.headers
+    });
+  }
+
+  updateProduct(product: Product): Observable<any> {
+    return this.http.put(API_URL + "product-update", JSON.stringify(product), {
+      headers: this.headers
+    });
+  }
+
+  deleteProduct(product: Product): Observable<any> {
+    return this.http.post(API_URL + "product-delete", JSON.stringify(product), {
+      headers: this.headers
+    });
+  }
+
   findAllProducts(): Observable<any> {
     return this.http.get(API_URL + "product-all", { headers: this.headers });
   }
