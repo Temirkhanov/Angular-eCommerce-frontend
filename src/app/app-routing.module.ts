@@ -32,9 +32,9 @@ const routes: Routes = [
   //admin panel
   {
     path: "dashboard",
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.ADMIN] }
+    component: DashboardComponent
+    // canActivate: [AuthGuard]
+    // data: { roles: [Role.ADMIN] }
   },
   {
     path: "user-list",
