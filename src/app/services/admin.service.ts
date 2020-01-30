@@ -23,6 +23,20 @@ export class AdminService {
     });
   }
 
+  // Users
+
+  updateUser(user: User): Observable<any> {
+    return this.http.put(API_URL + "user-update", JSON.stringify(user), {
+      headers: this.headers
+    });
+  }
+
+  deleteUser(user: User): Observable<any> {
+    return this.http.post(API_URL + "user-delete", JSON.stringify(user), {
+      headers: this.headers
+    });
+  }
+
   findAllUsers(): Observable<any> {
     return this.http.get(API_URL + "user-all", { headers: this.headers });
   }
@@ -30,6 +44,8 @@ export class AdminService {
   numberOfUsers(): Observable<any> {
     return this.http.get(API_URL + "user-number", { headers: this.headers });
   }
+
+  // Products
 
   findAllProducts(): Observable<any> {
     return this.http.get(API_URL + "product-all", { headers: this.headers });
