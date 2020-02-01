@@ -7,8 +7,8 @@ import { AdminService } from "../../../services/admin.service";
   styleUrls: ["./dashboard.component.css"]
 })
 export class DashboardComponent implements OnInit {
-  userCount: number;
-  productCount: number;
+  userCount: any = "";
+  productCount: any = "";
   transactionCount: any = "";
 
   constructor(private adminService: AdminService) {}
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   numberOfUsers() {
     this.adminService.numberOfUsers().subscribe(data => {
-      this.userCount = data.response;
+      this.userCount = data;
     });
   }
 

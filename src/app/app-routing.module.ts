@@ -34,12 +34,12 @@ const routes: Routes = [
     path: "dashboard",
     component: DashboardComponent,
     canActivate: [AuthGuard],
-    data: { roles: [Role.USER] }
-    // data: { roles: [Role.ADMIN] }
+    data: { roles: [Role.ADMIN] }
   },
   {
     path: "user-list",
     component: UserListComponent,
+    canActivate: [AuthGuard],
     data: { roles: [Role.ADMIN] }
   },
   {
