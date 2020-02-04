@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   numberOfUsers() {
     this.adminService.numberOfUsers().subscribe(data => {
-      this.userCount = data;
+      this.userCount = data.response;
     });
   }
 
