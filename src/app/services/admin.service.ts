@@ -6,7 +6,8 @@ import { User } from "../model/user";
 import { Product } from "../model/product";
 import { Transaction } from "../model/transaction";
 
-let API_URL = "http://localhost:8080/api/admin/";
+// let API_URL = "http://localhost:8080/api/admin/";
+let API_URL = "https://rt-ecommerce.herokuapp.com/api/admin/";
 
 @Injectable({
   providedIn: "root"
